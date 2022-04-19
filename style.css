@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    height: 1000px;
+}
+
+.gridContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+}
+
+.gridItem {
+    margin: 1px;
+    height: 35px;
+    width: 35px;
+    background-color: black;
+    color: white;
+}

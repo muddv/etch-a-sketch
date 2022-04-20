@@ -21,3 +21,11 @@ body {
     background-color: black;
     color: white;
 }
+
+.gridItemSmall {
+    margin: 1px;
+    height: 15px;
+    width: 15px;
+    background-color: black;
+    color: white;
+}

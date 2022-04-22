@@ -11,11 +11,15 @@ function createGrid(gridSize, gridState) {
     for (let i = 0; i < gridSize; i++) {
         const gridItem = document.createElement("div");
         if (gridState === "default") {
-            gridItem.className = "gridItem";
+            gridItem.setAttribute("id", "gridItemDefault");
         }
         else if (gridState === "small") {
-            gridItem.className = "gridItemSmall";
+            gridItem.setAttribute("id", "gridItemSmall");
         }
+        else if (gridState === "large") {
+            gridItem.setAttribute("id", "gridItemLarge");
+        }
+        gridItem.className = "gridItem";
         gridItem.addEventListener("mouseenter", draw)
         gridContainer.appendChild(gridItem);
     }   
@@ -28,32 +32,60 @@ function draw(evnt) {
     }
 }
 
-function clear() {
+function clearButton() {
     const clearButton = document.querySelector("#clear");
     clearButton.addEventListener("click", () => {
         for (let i = 0; i < gridSize; i++) {
             const gridContainer = document.querySelector(".gridContainer");
             const gridItem = document.querySelector(".gridItem")
-            console.log("jwgkjb") 
             gridContainer.removeChild(gridItem);
             }
         createGrid(gridSize, gridState);
     });
 }
 
+function clearSwitch(gridSize) {
+    for (let i = 0; i < gridSize; i++) {
+        const gridContainer = document.querySelector(".gridContainer");
+        const gridItem = document.querySelector(".gridItem")
+        gridContainer.removeChild(gridItem);
+    }
+}
+
 function smallGrid() {
     const smallButton = document.querySelector("#smallGrid");
     smallButton.addEventListener("click", () => {
+        clearSwitch(gridSize)
         gridSize = 500;
         gridState = "small";
-        console.log("wow")
-        clear();
-        createGrid(gridSize, gridState);
+        createGrid(500, "small");
     });
+}
+
+function largeGrid() {
+    const largeButton = document.querySelector("#largeGrid");
+    largeButton.addEventListener("click", () => {
+        clearSwitch(gridSize);
+        gridSize = 150;
+        gridState = "large";
+        createGrid(150, "large");
+    });
+}
+
+function defaultGrid() {
+    const defaultButton = document.querySelector("#defaultGrid");
+    defaultButton.addEventListener("click", () => {
+        clearSwitch(gridSize);
+        gridSize = 260;
+        gridState = "default";
+        createGrid(260, "default");
+    })
 }
 
 window.onload = () => {
     createGrid(gridSize, gridState);
-    clear();
+    clearButton();
     smallGrid();
+    largeGrid();
+    defaultGrid();
   }

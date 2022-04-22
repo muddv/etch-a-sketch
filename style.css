@@ -16,16 +16,21 @@ body {
 
 .gridItem {
     margin: 1px;
-    height: 35px;
-    width: 35px;
     background-color: black;
     color: white;
 }
 
-.gridItemSmall {
-    margin: 1px;
+#gridItemDefault {
+    height: 35px;
+    width: 35px;
+}
+
+#gridItemSmall {
     height: 15px;
     width: 15px;
-    background-color: black;
-    color: white;
+}
+
+#gridItemLarge {
+    height: 50px;
+    width: 50px;
 }

@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    height: 1000px;
+}
+
+.gridContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+}
+
+.gridItem {
+    margin: 1px;
+    background-color: black;
+    color: white;
+}
+
+#gridItemDefault {
+    height: 35px;
+    width: 35px;
+}
+
+#gridItemSmall {
+    height: 25px;
+    width: 25px;
+}
+
+#gridItemLarge {
+    height: 50px;
+    width: 50px;
+}
+
+button {
+    color: yellow;
+    background-color: black;
+    font-weight: 600;
+    font-family: sans-serif;
+    width: fit-content;
+    height: 50px;
+    border-radius: 12px;
+}
+
+p {
+    font-size: x-large;
+    font-family: sans-serif;
+}
